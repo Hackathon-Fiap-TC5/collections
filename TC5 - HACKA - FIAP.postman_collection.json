@@ -1,10 +1,381 @@
 {
-	"info": {
-		"_postman_id": "766aa6c4-ec28-4ef8-98b3-f57e774cbd7d",
-		"name": "TC5 - HACKA - FIAP",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "14131416",
-		"_collection_link": "https://interstellar-satellite-368322.postman.co/workspace/FIAP~1209769b-6eb2-4429-9e2f-a01394233f0e/collection/14131416-766aa6c4-ec28-4ef8-98b3-f57e774cbd7d?action=share&source=collection_link&creator=14131416"
-	},
-	"item": []
+  "info": {
+    "_postman_id": "766aa6c4-ec28-4ef8-98b3-f57e774cbd7d",
+    "name": "TC5 - HACKA - FIAP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "14131416",
+    "_collection_link": "https://go.postman.co/collection/14131416-766aa6c4-ec28-4ef8-98b3-f57e774cbd7d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "comparecimento",
+      "item": [
+        {
+          "name": "_consultarIndiceComparecimentoPaciente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_COMPARECIMENTO}}/v1/pacientes/898001160128745/indice-comparecimento",
+              "host": [
+                "{{HOST_COMPARECIMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "pacientes",
+                "898001160128745",
+                "indice-comparecimento"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "agendamento",
+      "item": [
+        {
+          "name": "_criarAgendamento",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cns\" : \"123456789012345\",\r\n    \"dataConsulta\" : \"2026-02-10T14:30:00+00:00\",\r\n    \"especialidade\" : \"CARDIOLOGIA\",\r\n    \"crmMedico\" : \"CRM-SP-123456\",\r\n    \"cnesLocal\" : \"1234567\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_consultarAgendamentoPorId",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cns\" : \"123456789012345\",\r\n    \"dataConsulta\" : \"2026-02-10T14:30:00+00:00\",\r\n    \"especialidade\" : \"CARDIOLOGIA\",\r\n    \"crmMedico\" : \"CRM-SP-123456\",\r\n    \"cnesLocal\" : \"1234567\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=2",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos"
+              ],
+              "query": [
+                {
+                  "key": "idAgendamento",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_consultarAgendamentosPorCns",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/cns?cns=123456789012345",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos",
+                "cns"
+              ],
+              "query": [
+                {
+                  "key": "cns",
+                  "value": "123456789012345"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_registrarConfirmacaoAgendamento",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"statusNotificacaoId\" : 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/confirmacao?idAgendamento=2",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos",
+                "confirmacao"
+              ],
+              "query": [
+                {
+                  "key": "idAgendamento",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_registrarStatusConsulta",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"statusConsultaId\" : 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status?idAgendamento=2",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "idAgendamento",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_listarStatusConsulta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-consulta",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_criarStatusConsulta",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"GUSTAVO1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-consulta",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-consulta"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_atualizarStatusConsulta",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"MARCOS\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-consulta/2",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-consulta",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_removerStatusConsulta",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-consulta/1",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-consulta",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_listarStatusNotificacao",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-notificacao",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-notificacao"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_criarStatusNotificacao",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"GUSTAVO1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-notificacao",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-notificacao"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_atualizarStatusNotificacao",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"MARCOS\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-notificacao/1",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-notificacao",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_removerStatusNotificacao",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/status-notificacao/1",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "status-notificacao",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
