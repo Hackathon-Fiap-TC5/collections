@@ -192,6 +192,30 @@
           "response": []
         },
         {
+          "name": "_removerAgendamentoPorId",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=3",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos"
+              ],
+              "query": [
+                {
+                  "key": "idAgendamento",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "name": "_listarStatusConsulta",
           "request": {
             "method": "GET",
