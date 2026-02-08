@@ -1,10 +1,9 @@
 {
   "info": {
-    "_postman_id": "766aa6c4-ec28-4ef8-98b3-f57e774cbd7d",
+    "_postman_id": "15836c23-ad97-4d97-8e88-c833b3aca45b",
     "name": "TC5 - HACKA - FIAP",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "14131416",
-    "_collection_link": "https://go.postman.co/collection/14131416-766aa6c4-ec28-4ef8-98b3-f57e774cbd7d?source=collection_link"
+    "_exporter_id": "44632007"
   },
   "item": [
     {
@@ -29,37 +28,6 @@
             }
           },
           "response": []
-        },
-        {
-          "name": "_relatorioAbsenteismoPorPeriodo",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{HOST_COMPARECIMENTO}}/v1/relatorios/absenteismo?dataInicio=2026-02-01&dataFim=2026-02-01",
-              "host": [
-                "{{HOST_COMPARECIMENTO}}"
-              ],
-              "path": [
-                "v1",
-                "relatorios",
-                "absenteismo"
-              ],
-              "query": [
-                {
-                  "key": "dataInicio",
-                  "value": "2026-02-01",
-                  "type": "text"
-                },
-                {
-                  "key": "dataFim",
-                  "value": "2026-02-01",
-                  "type": "text"
-                }
-              ]
-            }
-          },
-          "response": []
         }
       ]
     },
@@ -73,7 +41,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"cns\" : \"123456789012345\",\r\n    \"dataConsulta\" : \"2026-02-10T14:30:00+00:00\",\r\n    \"especialidade\" : \"CARDIOLOGIA\",\r\n    \"crmMedico\" : \"CRM-SP-123456\",\r\n    \"cnesLocal\" : \"1234567\"\r\n}\r\n",
+              "raw": "{\r\n    \"cns\" : \"898001160128745\",\r\n    \"dataConsulta\" : \"2026-02-10T14:30:00+00:00\",\r\n    \"especialidade\" : \"CARDIOLOGIA\",\r\n    \"crmMedico\" : \"CRM-SP-123456\",\r\n    \"cnesLocal\" : \"1234567\"\r\n}\r\n",
               "options": {
                 "raw": {
                   "language": "json"
@@ -155,13 +123,13 @@
           "response": []
         },
         {
-          "name": "_registrarConfirmacaoAgendamento",
+          "name": "__atualizarStatusNotificacao",
           "request": {
             "method": "PATCH",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"statusNotificacaoId\" : 3\r\n}",
+              "raw": "{\r\n    \"statusNotificacaoId\" : 4\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -169,14 +137,48 @@
               }
             },
             "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/confirmacao?idAgendamento=4",
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status-notificacao?idAgendamento=1",
               "host": [
                 "{{HOST_AGENDAMENTO}}"
               ],
               "path": [
                 "v1",
                 "agendamentos",
-                "confirmacao"
+                "status-notificacao"
+              ],
+              "query": [
+                {
+                  "key": "idAgendamento",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_atualizarStatusConsulta",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"statusConsultaId\" : 4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status-consulta?idAgendamento=4",
+              "host": [
+                "{{HOST_AGENDAMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "agendamentos",
+                "status-consulta"
               ],
               "query": [
                 {
@@ -189,46 +191,12 @@
           "response": []
         },
         {
-          "name": "_registrarStatusConsulta",
+          "name": "_cancelaAgendamentoPorId",
           "request": {
             "method": "PATCH",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"statusConsultaId\" : 2\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
             "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status?idAgendamento=2",
-              "host": [
-                "{{HOST_AGENDAMENTO}}"
-              ],
-              "path": [
-                "v1",
-                "agendamentos",
-                "status"
-              ],
-              "query": [
-                {
-                  "key": "idAgendamento",
-                  "value": "2"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "_removerAgendamentoPorId",
-          "request": {
-            "method": "DELETE",
-            "header": [],
-            "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=3",
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=4",
               "host": [
                 "{{HOST_AGENDAMENTO}}"
               ],
@@ -239,7 +207,7 @@
               "query": [
                 {
                   "key": "idAgendamento",
-                  "value": "3"
+                  "value": "4"
                 }
               ]
             }
