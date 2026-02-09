@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "15836c23-ad97-4d97-8e88-c833b3aca45b",
-    "name": "TC5 - HACKA - FIAP",
+    "_postman_id": "4b33fa6b-dd3c-40fc-9eac-f18c8776dddf",
+    "name": "Comparece+ - PosTech_TC5_hackathon",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "44632007"
+    "_exporter_id": "14131416",
+    "_collection_link": "https://go.postman.co/collection/14131416-4b33fa6b-dd3c-40fc-9eac-f18c8776dddf?source=collection_link"
   },
   "item": [
     {
