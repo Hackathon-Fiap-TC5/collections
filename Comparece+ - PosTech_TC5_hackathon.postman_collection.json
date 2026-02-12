@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "4b33fa6b-dd3c-40fc-9eac-f18c8776dddf",
+    "_postman_id": "424b6d3c-a9a3-4a6a-92e6-7a6c485d913f",
     "name": "Comparece+ - PosTech_TC5_hackathon",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "14131416",
-    "_collection_link": "https://go.postman.co/collection/14131416-4b33fa6b-dd3c-40fc-9eac-f18c8776dddf?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/14131416-424b6d3c-a9a3-4a6a-92e6-7a6c485d913f?source=collection_link"
   },
   "item": [
     {
@@ -25,6 +25,47 @@
                 "pacientes",
                 "898001160128745",
                 "indice-comparecimento"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_relatorioAbsenteismoPorPeriodo",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"dataInicio\": \"2026-02-01\",\r\n    \"dataFim\": \"2026-02-01\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{HOST_COMPARECIMENTO}}/v1/relatorios/absenteismo?dataInicio=2026-02-01&dataFim=2026-02-01",
+              "host": [
+                "{{HOST_COMPARECIMENTO}}"
+              ],
+              "path": [
+                "v1",
+                "relatorios",
+                "absenteismo"
+              ],
+              "query": [
+                {
+                  "key": "dataInicio",
+                  "value": "2026-02-01"
+                },
+                {
+                  "key": "dataFim",
+                  "value": "2026-02-01"
+                }
               ]
             }
           },
@@ -80,7 +121,7 @@
               }
             },
             "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=2",
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos?idAgendamento=1",
               "host": [
                 "{{HOST_AGENDAMENTO}}"
               ],
@@ -91,7 +132,7 @@
               "query": [
                 {
                   "key": "idAgendamento",
-                  "value": "2"
+                  "value": "1"
                 }
               ]
             }
@@ -104,7 +145,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/cns?cns=123456789012345",
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/cns?cns=898001160128745",
               "host": [
                 "{{HOST_AGENDAMENTO}}"
               ],
@@ -116,7 +157,7 @@
               "query": [
                 {
                   "key": "cns",
-                  "value": "123456789012345"
+                  "value": "898001160128745"
                 }
               ]
             }
@@ -240,7 +281,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"status\": \"GUSTAVO1\"\r\n}",
+              "raw": "{\r\n    \"status\": \"FALTOU\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
