@@ -439,6 +439,71 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "_consultarFilaViva",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:9083/ms-agendamento/v1/fila-viva",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9083",
+              "path": [
+                "ms-agendamento",
+                "v1",
+                "fila-viva"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "_publicarFilaViva",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept",
+                "value": "*/*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idAgendamento\": 15,\n  \"cns\": \"321566789012345\",\n  \"sugestaoConduta\": \"ACEITA_ENCAIXE_RAPIDO\",\n  \"perfilPaciente\": \"CONFIAVEL\",\n  \"justificativa\": \"Paciente confiável, elegível para reaproveitamento de vaga\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9083/ms-agendamento/v1/fila-viva",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9083",
+              "path": [
+                "ms-agendamento",
+                "v1",
+                "fila-viva"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     }
