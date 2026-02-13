@@ -1,10 +1,10 @@
 {
   "info": {
-    "_postman_id": "ae9c4f18-dc07-4928-bc7e-fb4d98ba2364",
+    "_postman_id": "237fdbb0-17ef-4002-a289-6e55d70a4718",
     "name": "Comparece+ - PosTech_TC5_hackathon",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "14131416",
-    "_collection_link": "https://go.postman.co/collection/14131416-ae9c4f18-dc07-4928-bc7e-fb4d98ba2364?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/14131416-237fdbb0-17ef-4002-a289-6e55d70a4718?source=collection_link"
   },
   "item": [
     {
@@ -16,15 +16,20 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{HOST_COMPARECIMENTO}}/v1/pacientes/898001160128745/indice-comparecimento",
+              "raw": "{{HOST_COMPARECIMENTO}}/v1/pacientes/indice-comparecimento?cns=898001160128745",
               "host": [
                 "{{HOST_COMPARECIMENTO}}"
               ],
               "path": [
                 "v1",
                 "pacientes",
-                "898001160128745",
                 "indice-comparecimento"
+              ],
+              "query": [
+                {
+                  "key": "cns",
+                  "value": "898001160128745"
+                }
               ]
             }
           },
@@ -48,7 +53,7 @@
               }
             },
             "url": {
-              "raw": "{{HOST_COMPARECIMENTO}}/v1/relatorios/absenteismo?dataInicio=2026-02-01&dataFim=2026-02-01",
+              "raw": "{{HOST_COMPARECIMENTO}}/v1/relatorios/absenteismo?dataInicio=2026-02-01&dataFim=2026-02-12",
               "host": [
                 "{{HOST_COMPARECIMENTO}}"
               ],
@@ -64,7 +69,7 @@
                 },
                 {
                   "key": "dataFim",
-                  "value": "2026-02-01"
+                  "value": "2026-02-12"
                 }
               ]
             }
@@ -171,7 +176,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"statusNotificacaoId\" : 4\r\n}",
+              "raw": "{\r\n    \"statusNotificacaoId\" : 2\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -205,7 +210,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"statusConsultaId\" : 4\r\n}",
+              "raw": "{\r\n    \"statusConsultaId\" : 2\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -213,7 +218,7 @@
               }
             },
             "url": {
-              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status-consulta?idAgendamento=4",
+              "raw": "{{HOST_AGENDAMENTO}}/v1/agendamentos/status-consulta?idAgendamento=1",
               "host": [
                 "{{HOST_AGENDAMENTO}}"
               ],
@@ -225,7 +230,7 @@
               "query": [
                 {
                   "key": "idAgendamento",
-                  "value": "4"
+                  "value": "1"
                 }
               ]
             }
